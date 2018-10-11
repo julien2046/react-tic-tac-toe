@@ -4,9 +4,12 @@ import Input from './Input';
 
 class AppForm extends Component {
 
-  componentDitMount() {
+  componentDidMount() {
+
     setTimeout(() => {
-      this.firstInput.focus();
+      if (this.firstInput) {
+        this.firstInput.focus();
+      }
     }, 1000)
   }
 
