@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import Button from './Button';
@@ -36,7 +37,9 @@ class Credits extends Component {
         {persons}
       </div>
       <div className='button__container button__container--center'>
-        <Button styleBtn='button--back'>Back</Button>
+        <Link to="/">
+          <Button styleBtn='button--back'>Back</Button>
+        </Link>
       </div>
     </div>
     )
