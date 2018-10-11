@@ -1,0 +1,115 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+#root {
+  height: 100%; }
+
+.dashboard {
+  height: 100vh;
+  background-color: black; }
+  .dashboard__logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px; }
+  .dashboard__logo-image {
+    display: inline-block;
+    max-width: 600px;
+    height: auto; }
+
+.app-form {
+  position: relative; }
+
+.box {
+  max-width: 560px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); }
+
+.button__back {
+  display: flex;
+  align-self: center; }
+
+.call-to-action {
+  transform: translate3d(0, 0, 0);
+  overflow: hidden; }
+  .call-to-action__inner {
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+  .call-to-action__inner--grey {
+    background-color: lightgrey;
+    border-top: 1px solid grey; }
+
+.input__label {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: bold; }
+
+.input__field {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 55px;
+  padding: 0 15px;
+  margin-bottom: 15px;
+  background-color: white;
+  border: 1px solid grey; }
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.85); }
+  .modal__wrapper {
+    position: relative;
+    max-width: 600px;
+    padding: 10px;
+    overflow: hidden;
+    border: 1px solid white;
+    border-radius: 10px; }
+  .modal__title-wrapper {
+    margin: 10px;
+    overflow: auto; }
+  .modal__title {
+    float: left;
+    color: white;
+    font-weight: bold; }
+  .modal__close {
+    float: right;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    top: 2px;
+    z-index: 10;
+    cursor: pointer; }
+  .modal__box {
+    position: relative;
+    width: 600px;
+    max-height: calc(100vh - 100px);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25); }
+  .modal__content {
+    overflow-x: hidden; }
+
+.credits {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: lightgray; }
+  .credits__title {
+    text-align: center; }
+  .credits__list {
+    padding: 0;
+    text-align: center;
+    list-style: none; }

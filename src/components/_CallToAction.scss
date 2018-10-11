@@ -1,0 +1,17 @@
+.call-to-action {
+  transform: translate3d(0,0,0);
+  overflow: hidden;
+
+  &__inner {
+    padding: 30px 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  &__inner--grey {
+    background-color: lightgrey;
+  	border-top: 1px solid grey;
+  }
+}
