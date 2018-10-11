@@ -1,7 +1,14 @@
 .button {
-  display: flex;
+
+  &__container {
+    display: flex;
+  }
+
+  &__container--center {
+    justify-content: center;
+  }
 
   &--back {
-    align-self: center;
+
   }
 }

@@ -28,10 +28,11 @@ html, body {
   border-radius: 10px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); }
 
-.button {
+.button__container {
   display: flex; }
-  .button--back {
-    align-self: center; }
+
+.button__container--center {
+  justify-content: center; }
 
 .call-to-action {
   transform: translate3d(0, 0, 0);
