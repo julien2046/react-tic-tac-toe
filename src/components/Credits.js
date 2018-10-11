@@ -35,7 +35,7 @@ class Credits extends Component {
         <h2 className='credits__title'>Credit</h2>
         {persons}
       </div>
-      <Button styleBtn='button--dark'>Back</Button>
+      <Button styleBtn='button--back'>Back</Button>
     </div>
     )
   }

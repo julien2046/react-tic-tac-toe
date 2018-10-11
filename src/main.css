@@ -28,9 +28,10 @@ html, body {
   border-radius: 10px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); }
 
-.button__back {
-  display: flex;
-  align-self: center; }
+.button {
+  display: flex; }
+  .button--back {
+    align-self: center; }
 
 .call-to-action {
   transform: translate3d(0, 0, 0);
