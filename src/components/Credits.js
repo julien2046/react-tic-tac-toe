@@ -1,28 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+
 
 import Button from './Button';
 
 
 class Credits extends Component {
 
-  state = {
-    credits: []
-  }
-
-  componentDidMount() {
-    axios.get('https://randomuser.me/api/?results=10')
-      .then(res => {
-        this.setState({credits: res.data.results})
-    });
-  }
 
   render() {
+    const { credits } = this.props;
 
     const persons = (
       <ul className='credits__list'>
-        {this.state.credits.map((person, index) =>
+        {credits.map((person, index) =>
           <li key={index}>
             {person.name.first}
           </li>
