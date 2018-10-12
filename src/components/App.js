@@ -5,7 +5,7 @@ import axios from 'axios';
 import Box from './Box';
 import CallToAction from './CallToAction';
 import Credits from './Credits';
-import Board from './Board';
+import Game from './Game';
 
 import Logo from '../assets/img/logo.svg';
 
@@ -57,7 +57,7 @@ class App extends Component {
           <Route
             path='/game'
             render={props => (
-              <Board players={players} {...props} />
+              <Game players={players} {...props} />
             )}
           />
         </Switch>

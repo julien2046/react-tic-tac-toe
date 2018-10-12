@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Board from './Board';
+import Square from './Square';
 
 
 function calculateWinner(squares) {
@@ -13,12 +14,15 @@ function calculateWinner(squares) {
     [0, 4, 8],
     [2, 4, 6]
   ];
+
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
+
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       return squares[a];
     }
   }
+
   return null;
 }
 
@@ -27,6 +31,7 @@ class Game extends Component {
 
   constructor(props) {
     super(props);
+
     this.state = {
       history: [
         {
@@ -58,7 +63,7 @@ class Game extends Component {
       stepNumber: history.length,
       xIsNext: !this.state.xIsNext
     });
-    
+
   }
 
   jumpTo(step) {
@@ -77,6 +82,7 @@ class Game extends Component {
       const desc = move ?
         'Go to move #' + move :
         'Go to game start';
+
       return (
         <li key={move}>
           <button onClick={() => this.jumpTo(move)}>{desc}</button>
@@ -97,6 +103,7 @@ class Game extends Component {
           <Board
             squares={current.squares}
             onClick={i => this.handleClick(i)}
+            players={this.props.players}
           />
         </div>
         <div className="game-info">
