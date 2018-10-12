@@ -23,7 +23,6 @@ class Board extends Component {
           <Players players={players} />
         </div>
         <div className="board">
-
           <div className="board__row">
             {this.renderSquare(0)}
             {this.renderSquare(1)}
@@ -41,7 +40,6 @@ class Board extends Component {
             {this.renderSquare(7)}
             {this.renderSquare(8)}
           </div>
-
         </div>
       </div>
     );

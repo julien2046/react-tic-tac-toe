@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Board from './Board';
-import Square from './Square';
 
 
 function calculateWinner(squares) {
