@@ -13,6 +13,7 @@ class CallToAction extends Component {
   }
 
   showModal = () => {
+
     this.setState({
       modalActive: true
     })

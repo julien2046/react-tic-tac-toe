@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 
 import Box from './Box';
 import CallToAction from './CallToAction';
 import Credits from './Credits';
+import Board from './Board';
 
 import Logo from '../assets/img/logo.svg';
 
@@ -24,7 +25,7 @@ class App extends Component {
   render() {
     const currentPath = window.location.pathname;
     let redirect = false;
-    if (currentPath === '/credits') redirect = true;
+    if (currentPath === '/credits' || currentPath === '/game') redirect = true;
 
     const { credits } = this.state;
 
@@ -40,12 +41,20 @@ class App extends Component {
             <CallToAction />
           </Box>
         }
-        <Route
-          path='/credits'
-          render={props => (
-            <Credits credits={credits} toggleButton={this.toggleButton} {...props} />
-          )}
-        />
+        <Switch>
+          <Route
+            path='/credits'
+            render={props => (
+              <Credits credits={credits} toggleButton={this.toggleButton} {...props} />
+            )}
+          />
+          <Route
+            path='/game'
+            render={props => (
+              <Board {...props} />
+            )}
+          />
+        </Switch>
       </div>
     );
   }

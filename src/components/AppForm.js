@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import Button from './Button';
 import Input from './Input';
 
 class AppForm extends Component {
+
+  state = {
+    redirect: false
+  }
 
   componentDidMount() {
 
@@ -13,7 +18,22 @@ class AppForm extends Component {
     }, 1000)
   }
 
+
+  startGame = event => {
+    event.preventDefault();
+    this.setState({ redirect: true });
+
+    // Vérifier ici que les inputs ne sont pas vide
+  }
+
+
   render() {
+    const { redirect } = this.state;
+
+    if (redirect) {
+      return <Redirect push to='/game'/>;
+    }
+
     return (
       <div className='app-form'>
 				<div>
@@ -25,7 +45,7 @@ class AppForm extends Component {
 				</div>
 
 				<div>
-					<Button>Start!</Button>
+					 <Button handleClick={e => this.startGame(e)}>Start!</Button>
 				</div>
 			</div>
     );
