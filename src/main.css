@@ -21,6 +21,12 @@ html, body {
 .app-form {
   position: relative; }
 
+.board {
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: white; }
+
 .box {
   max-width: 560px;
   margin: 0 auto;
@@ -45,6 +51,17 @@ html, body {
   .call-to-action__inner--grey {
     background-color: lightgrey;
     border-top: 1px solid grey; }
+
+.credits {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: lightgray; }
+  .credits__title {
+    text-align: center; }
+  .credits__list {
+    padding: 0;
+    text-align: center;
+    list-style: none; }
 
 .input__label {
   display: inline-block;
@@ -105,13 +122,13 @@ html, body {
   .modal__content {
     overflow-x: hidden; }
 
-.credits {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: lightgray; }
-  .credits__title {
-    text-align: center; }
-  .credits__list {
+.players {
+  width: 600px;
+  margin: 50px auto; }
+  .players__container {
+    border: 1px solid white; }
+  .players__list {
+    list-style: none;
     padding: 0;
-    text-align: center;
-    list-style: none; }
+    margin: 0;
+    color: white; }

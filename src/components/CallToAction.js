@@ -27,6 +27,7 @@ class CallToAction extends Component {
 
   render() {
     const { modalActive } = this.state;
+    const { setPlayers } = this.props;
 
 
     return (
@@ -41,7 +42,7 @@ class CallToAction extends Component {
             title='Start a new game'
             returnFocusElem={this.newGame}
           >
-            <AppForm />
+            <AppForm setPlayers={setPlayers} />
           </Modal>
           <Link to="/credits">
             <Button>

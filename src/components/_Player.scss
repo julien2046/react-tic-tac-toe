@@ -1,0 +1,15 @@
+.players {
+  width: 600px;
+  margin: 50px auto;
+
+  &__container {
+    border: 1px solid white;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+  }
+}

@@ -20,6 +20,12 @@ class App extends Component {
       .then(res => {
         this.setState({credits: res.data.results})
     });
+
+  }
+
+  setPlayers = data => {
+    const playersData = [...data];
+    this.setState({players: playersData});
   }
 
   render() {
@@ -27,7 +33,7 @@ class App extends Component {
     let redirect = false;
     if (currentPath === '/credits' || currentPath === '/game') redirect = true;
 
-    const { credits } = this.state;
+    const { credits, players } = this.state;
 
     return (
       <div className="dashboard">
@@ -38,7 +44,7 @@ class App extends Component {
         {
           !redirect &&
           <Box>
-            <CallToAction />
+            <CallToAction setPlayers={this.setPlayers} />
           </Box>
         }
         <Switch>
@@ -51,7 +57,7 @@ class App extends Component {
           <Route
             path='/game'
             render={props => (
-              <Board {...props} />
+              <Board players={players} {...props} />
             )}
           />
         </Switch>
