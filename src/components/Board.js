@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import Players from './Players';
+import Players from './Players';
 import Square from './Square';
 
 
@@ -16,13 +16,12 @@ class Board extends Component {
   }
 
   render() {
-    // const { players } = this.props;
-    // <Players players={players} />
+     const { players, score1, score2 } = this.props;
 
     return (
       <div>
         <div className="players">
-
+          <Players players={players} score1={score1} score2={score2} />
         </div>
         <div className="board">
           <div className="board__row">

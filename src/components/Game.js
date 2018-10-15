@@ -40,17 +40,31 @@ class Game extends Component {
     ],
     stepNumber: 0,
     xIsNext: true,
-    modalActive: false
+    modalActive: false,
+    score1: 0,
+    score2: 0,
   }
 
   componentDidUpdate(prevProps, prevState) {
     const { history, stepNumber } = this.state;
-    const current = history[stepNumber];
 
-    const winner = calculateWinner(current.squares);
 
     if(prevState.history !== history) {
-      if (winner) this.showModal();
+      const current = history[stepNumber];
+      const winner = calculateWinner(current.squares);
+
+      if (winner) {
+         this.showModal();
+        winner === "X"
+          ?
+        this.setState(state => ({
+          score1: state.score1++
+        }))
+          :
+        this.setState(state => ({
+          score2: state.score2++
+        }))
+      }
     }
   }
 
@@ -84,8 +98,23 @@ class Game extends Component {
     this.setState({modalActive: true});
   }
 
+  restartGame() {
+
+    this.setState({
+      history: [
+        {
+          squares: Array(9).fill(null)
+        }
+      ],
+      stepNumber: 0,
+      xIsNext: true,
+      modalActive: false
+    });
+  }
+
+
   render() {
-    const { history, stepNumber, modalActive } = this.state;
+    const { history, stepNumber, modalActive, score1, score2} = this.state;
     const { players } = this.props;
 
     const current = history[stepNumber];
@@ -97,6 +126,8 @@ class Game extends Component {
             squares={current.squares}
             onClick={i => this.handleClick(i)}
             players={players}
+            score1={score1}
+            score2={score2}
           />
         </div>
 
@@ -105,7 +136,7 @@ class Game extends Component {
           title='Restart a game'
           close={false}
         >
-          <Button>
+          <Button handleClick={() => this.restartGame()}>
             Restart
           </Button>
           <a className='button btn btn-dark' role="button" href="http://www.google.com">

@@ -1,7 +1,9 @@
 import React from 'react';
 
 const Players = (props) => {
-  const { players } = props;
+  const { players, score1, score2 } = props;
+  console.log('score1: ' + score1);
+  console.log('score2: ' + score2);
 
   const playersList = (
     <ul className='players__list'>
