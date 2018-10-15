@@ -8,24 +8,81 @@ html, body {
 
 .dashboard {
   height: 100vh;
-  background-color: black; }
+  background: linear-gradient(#262626, black); }
   .dashboard__logo-container {
     display: flex;
     justify-content: center;
+    padding-top: 150px;
     margin-bottom: 100px; }
   .dashboard__logo-image {
     display: inline-block;
-    max-width: 600px;
+    max-width: 780px;
     height: auto; }
 
 .app-form {
   position: relative; }
 
 .board {
+  position: relative;
   width: 600px;
   height: 600px;
   margin: 0 auto;
   background-color: white; }
+  .board:before {
+    display: inline-block;
+    height: 15px;
+    background-color: #47d6b6; }
+  .board.ligne-1:before {
+    content: '';
+    width: 480px;
+    position: absolute;
+    top: 50%;
+    left: 15%; }
+  .board.ligne-2:before {
+    content: '';
+    width: 460px;
+    position: absolute;
+    top: 15%;
+    left: 15%; }
+  .board.ligne-3:before {
+    content: '';
+    width: 460px;
+    position: absolute;
+    top: 83%;
+    left: 15%; }
+  .board.ligne-4:before {
+    content: '';
+    width: 480px;
+    position: absolute;
+    top: 50%;
+    left: -23%;
+    transform: rotate(90deg); }
+  .board.ligne-5:before {
+    content: '';
+    width: 480px;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: rotate(90deg); }
+  .board.ligne-6:before {
+    content: '';
+    width: 480px;
+    position: absolute;
+    top: 50%;
+    left: 43%;
+    transform: rotate(90deg); }
+  .board.ligne-7:before {
+    content: '';
+    width: 624px;
+    position: absolute;
+    top: 50%;
+    transform: rotate(45deg); }
+  .board.ligne-8:before {
+    content: '';
+    width: 624px;
+    position: absolute;
+    top: 50%;
+    transform: rotate(-45deg); }
   .board__row:after {
     clear: both;
     content: "";
@@ -142,21 +199,23 @@ html, body {
     color: green; }
 
 .square {
-  background: #fff;
-  border: 1px solid #999;
   float: left;
-  font-size: 24px;
+  width: 201px;
+  height: 201px;
+  box-sizing: border-box;
+  background: #2c2c2c;
+  border: 20px solid #1e1e1e;
+  font-size: 160px;
+  text-align: center;
   font-weight: bold;
-  line-height: 34px;
-  height: 34px;
+  line-height: 160px;
   margin-right: -1px;
   margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 34px; }
+  padding: 0; }
   .square:focus {
     outline: none; }
 
 .game {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  justify-content: center; }

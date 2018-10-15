@@ -1,8 +1,101 @@
 .board {
+  $blue-lagoon: #47d6b6;
+
+  position: relative;
   width: 600px;
   height: 600px;
   margin: 0 auto;
   background-color: white;
+
+  &:before {
+    display: inline-block;
+    height: 15px;
+
+    background-color: $blue-lagoon;
+  }
+
+  &.ligne-1 {
+    &:before {
+      content: '';
+      width: 480px;
+      position: absolute;
+      top: 50%;
+      left: 15%;
+    }
+  }
+
+  &.ligne-2 {
+    &:before {
+      content: '';
+      width: 460px;
+      position: absolute;
+      top: 15%;
+      left: 15%;
+    }
+  }
+
+  &.ligne-3 {
+    &:before {
+      content: '';
+      width: 460px;
+      position: absolute;
+      top: 83%;
+      left: 15%;
+    }
+  }
+
+  &.ligne-4 {
+    &:before {
+      content: '';
+      width: 480px;
+      position: absolute;
+      top: 50%;
+      left: -23%;
+      transform: rotate(90deg);
+    }
+  }
+
+  &.ligne-5 {
+    &:before {
+      content: '';
+      width: 480px;
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: rotate(90deg);
+    }
+  }
+
+  &.ligne-6 {
+    &:before {
+      content: '';
+      width: 480px;
+      position: absolute;
+      top: 50%;
+      left: 43%;
+      transform: rotate(90deg);
+    }
+  }
+
+  &.ligne-7 {
+    &:before {
+      content: '';
+      width: 624px;
+      position: absolute;
+      top: 50%;
+      transform: rotate(45deg);
+    }
+  }
+
+  &.ligne-8 {
+    &:before {
+      content: '';
+      width: 624px;
+      position: absolute;
+      top: 50%;
+      transform: rotate(-45deg);
+    }
+  }
 
   &__row:after {
     clear: both;

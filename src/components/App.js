@@ -20,7 +20,6 @@ class App extends Component {
       .then(res => {
         this.setState({credits: res.data.results})
     });
-
   }
 
   setPlayers = data => {
@@ -29,12 +28,13 @@ class App extends Component {
   }
 
   render() {
+    const { credits, players } = this.state;
+
     const currentPath = window.location.pathname;
     let redirect = false;
     if (currentPath === '/credits' || currentPath === '/game') redirect = true;
 
-    const { credits, players } = this.state;
-
+  
     return (
       <div className="dashboard">
         <div id="modal-root" />

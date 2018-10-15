@@ -10,17 +10,18 @@ html, body {
 
 .dashboard {
   height: 100vh;
-  background-color: black;
+  background: linear-gradient(lighten(black, 15%), black);
 
   &__logo-container {
     display: flex;
     justify-content: center;
+    padding-top: 150px;
     margin-bottom: 100px;
   }
 
   &__logo-image {
     display: inline-block;
-    max-width: 600px;
+    max-width: 780px;
     height: auto;
   }
 }
