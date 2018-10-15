@@ -1,11 +1,14 @@
 import React from 'react';
 
 const Players = (props) => {
-  const { players, score1, score2 } = props;
+  const { players, score1, score2, playerOneActive } = props;
   const score = [score1, score2];
+  console.log(playerOneActive);
+
+  const className = `players__list ${playerOneActive ? 'players__list--one' : 'players__list--two'}`;
 
   const playersList = (
-    <ul className='players__list'>
+    <ul className={className}>
       {players.map((player, index) =>
         <li key={index}>
           {player} : {score[index]}

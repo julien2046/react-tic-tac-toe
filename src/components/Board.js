@@ -16,12 +16,12 @@ class Board extends Component {
   }
 
   render() {
-     const { players, score1, score2 } = this.props;
+     const { players, score1, score2, playerOneActive } = this.props;
 
     return (
       <div>
         <div className="players">
-          <Players players={players} score1={score1} score2={score2} />
+          <Players players={players} score1={score1} score2={score2} playerOneActive={playerOneActive} />
         </div>
         <div className="board">
           <div className="board__row">

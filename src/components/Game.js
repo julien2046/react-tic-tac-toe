@@ -43,18 +43,18 @@ class Game extends Component {
     modalActive: false,
     score1: 0,
     score2: 0,
+    playerOneActive: true
   }
 
   componentDidUpdate(prevProps, prevState) {
     const { history, stepNumber } = this.state;
 
-
-    if(prevState.history !== history) {
+    if (prevState.history !== history) {
       const current = history[stepNumber];
       const winner = calculateWinner(current.squares);
 
       if (winner) {
-         this.showModal();
+        this.showModal();
         winner === "X"
           ?
         this.setState(state => ({
@@ -71,7 +71,6 @@ class Game extends Component {
 
   handleClick(i) {
     const { history , stepNumber, xIsNext } = this.state;
-
 
     const historyCurrent = history.slice(0, stepNumber + 1);
     const current = history[history.length - 1];
@@ -90,7 +89,8 @@ class Game extends Component {
         }
       ]),
       stepNumber: historyCurrent.length,
-      xIsNext: !xIsNext
+      xIsNext: !xIsNext,
+      playerOneActive: !xIsNext
     });
   }
 
@@ -108,13 +108,14 @@ class Game extends Component {
       ],
       stepNumber: 0,
       xIsNext: true,
-      modalActive: false
+      modalActive: false,
+      playerOneActive: true
     });
   }
 
 
   render() {
-    const { history, stepNumber, modalActive, score1, score2} = this.state;
+    const { history, stepNumber, modalActive, score1, score2, playerOneActive } = this.state;
     const { players } = this.props;
 
     const current = history[stepNumber];
@@ -126,6 +127,7 @@ class Game extends Component {
             squares={current.squares}
             onClick={i => this.handleClick(i)}
             players={players}
+            playerOneActive={playerOneActive}
             score1={score1}
             score2={score2}
           />
