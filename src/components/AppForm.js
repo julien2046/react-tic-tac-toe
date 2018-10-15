@@ -6,7 +6,8 @@ import Input from './Input';
 class AppForm extends Component {
 
   state = {
-    redirect: false
+    redirect: false,
+    placeholder: ''
   }
 
   componentDidMount() {
@@ -43,14 +44,13 @@ class AppForm extends Component {
       setPlayers(players);
       this.setState({ redirect: true });
     } else {
-      alert('Enter a name');
+      this.setState({placeholder: 'Please enter a name'});
     }
-
   }
 
 
   render() {
-    const { redirect, value } = this.state;
+    const { redirect, value, placeholder } = this.state;
 
     if (redirect) {
       return <Redirect push to='/game'/>;
@@ -66,6 +66,7 @@ class AppForm extends Component {
             value={value}
             onChange={this.handleChange}
             refName={el => this.firstInput = el}
+            placeholder={placeholder}
           />
 				</div>
 
@@ -76,6 +77,7 @@ class AppForm extends Component {
             type='text'
             value={value}
             onChange={this.handleChange}
+            placeholder={placeholder}
           />
 				</div>
 
