@@ -32,7 +32,7 @@ class CallToAction extends Component {
 
     return (
       <div className= 'call-to-action'>
-        <div className='call-to-action__inner call-to-action__inner--grey'>
+        <div className='call-to-action__inner'>
           <Button handleClick={() => this.showModal()} refName={el => this.newGame = el}>
             New Game
           </Button>
@@ -50,7 +50,7 @@ class CallToAction extends Component {
               Credits
             </Button>
           </Link>
-          <a className='button btn btn-dark' role="button" href="http://www.google.com">
+          <a className='button btn btn-lg button--link' role="button" href="http://www.google.com">
             Exit
           </a>
         </div>

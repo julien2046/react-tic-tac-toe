@@ -61,7 +61,7 @@ class AppForm extends Component {
 				<div>
 					<Input
             name='player1'
-            label='Player 1'
+            label='X Player 1'
             type='text'
             value={value}
             onChange={this.handleChange}
@@ -73,7 +73,7 @@ class AppForm extends Component {
 				<div>
 					<Input
             name='player2'
-            label='Player 2'
+            label='O Player 2'
             type='text'
             value={value}
             onChange={this.handleChange}
