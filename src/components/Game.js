@@ -70,7 +70,10 @@ class Game extends Component {
     const { history, stepNumber } = this.state;
     const { players } = this.props;
 
+    // Current square
     const current = history[stepNumber];
+
+    // Square's winning
     const winner = calculateWinner(current.squares);
 
 
