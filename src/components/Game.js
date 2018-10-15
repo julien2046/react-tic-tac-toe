@@ -5,30 +5,19 @@ import Modal from './Modal';
 import Button from './Button';
 
 
-function calculateWinner(squares) {
+function findLines(lines) {
+  let linesString = lines.join();
 
-  const lines = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
-  ];
-
-  for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
-
-    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
-    }
-  }
-
-  return null;
+  if (linesString === '0,1,2')      return 'ligne-1';
+  else if (linesString === '3,4,5') return 'ligne-2';
+  else if(linesString === '6,7,8')  return 'ligne-3';
+  else if (linesString === '0,3,6') return 'ligne-4';
+  else if (linesString === '1,4,7') return 'ligne-5';
+  else if (linesString === '2,5,8') return 'ligne-6';
+  else if (linesString === '0,4,8') return 'ligne-7';
+  else if (linesString === '2,4,6') return 'ligne-8';
+  else return 'no-line';
 }
-
 
 class Game extends Component {
 
@@ -43,7 +32,8 @@ class Game extends Component {
     modalActive: false,
     score1: 0,
     score2: 0,
-    playerOneActive: true
+    playerOneActive: true,
+    lines: []
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -51,7 +41,7 @@ class Game extends Component {
 
     if (prevState.history !== history) {
       const current = history[stepNumber];
-      const winner = calculateWinner(current.squares);
+      const winner = this.calculateWinner(current.squares);
 
       if (winner) {
         this.showModal();
@@ -76,7 +66,7 @@ class Game extends Component {
     const current = history[history.length - 1];
     const squares = current.squares.slice();
 
-    if (calculateWinner(squares) || squares[i]) {
+    if (this.calculateWinner(squares) || squares[i]) {
       return;
     }
 
@@ -94,6 +84,31 @@ class Game extends Component {
     });
   }
 
+  calculateWinner(squares) {
+
+    const lines = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6]
+    ];
+
+    for (let i = 0; i < lines.length; i++) {
+      const [a, b, c] = lines[i];
+
+      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+        this.setState({lines: lines[i]})
+        return squares[a];
+      }
+    }
+
+    return null;
+  }
+
   showModal() {
     this.setState({modalActive: true});
   }
@@ -109,16 +124,19 @@ class Game extends Component {
       stepNumber: 0,
       xIsNext: true,
       modalActive: false,
-      playerOneActive: true
+      playerOneActive: true,
+      lines: []
     });
   }
 
 
   render() {
-    const { history, stepNumber, modalActive, score1, score2, playerOneActive } = this.state;
+    const { history, stepNumber, modalActive, score1, score2, playerOneActive, lines } = this.state;
     const { players } = this.props;
 
     const current = history[stepNumber];
+    const linesClassName = findLines(lines);
+    console.log(linesClassName);
 
     return (
       <div className="game">
@@ -130,6 +148,7 @@ class Game extends Component {
             playerOneActive={playerOneActive}
             score1={score1}
             score2={score2}
+            classNameLine={linesClassName}
           />
         </div>
 

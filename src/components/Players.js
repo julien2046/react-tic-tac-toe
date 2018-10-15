@@ -3,7 +3,6 @@ import React from 'react';
 const Players = (props) => {
   const { players, score1, score2, playerOneActive } = props;
   const score = [score1, score2];
-  console.log(playerOneActive);
 
   const className = `players__list ${playerOneActive ? 'players__list--one' : 'players__list--two'}`;
 
