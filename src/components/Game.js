@@ -66,39 +66,17 @@ class Game extends Component {
 
   }
 
-  jumpTo(step) {
-    this.setState({
-      stepNumber: step,
-      xIsNext: (step % 2) === 0
-    });
-  }
-
   render() {
-    const { history, stepNumber, xIsNext } = this.state;
+    const { history, stepNumber } = this.state;
     const { players } = this.props;
 
     const current = history[stepNumber];
     const winner = calculateWinner(current.squares);
 
-    // Moves history
-    const moves = history.map((step, move) => {
-      const desc = move ?
-        'Go to move #' + move :
-        'Go to game start';
 
-      return (
-        <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
-        </li>
-      );
-    });
-
-    // Status or next player (X or Y).
     let status;
     if (winner) {
       status = "Winner: " + winner;
-    } else {
-      status = "Next player: " + (xIsNext ? "X" : "O");
     }
 
     return (
@@ -112,7 +90,6 @@ class Game extends Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
-          <ol>{moves}</ol>
         </div>
       </div>
     );
