@@ -58,11 +58,11 @@ class Game extends Component {
         winner === "X"
           ?
         this.setState(state => ({
-          score1: state.score1++
+          score1: state.score1 + 1
         }))
           :
         this.setState(state => ({
-          score2: state.score2++
+          score2: state.score2 + 1
         }))
       }
     }
