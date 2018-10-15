@@ -40,6 +40,7 @@ class CallToAction extends Component {
             handleClose={() => this.closeModal()}
             active={modalActive}
             title='Start a new game'
+            close={true}
             returnFocusElem={this.newGame}
           >
             <AppForm setPlayers={setPlayers} />

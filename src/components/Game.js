@@ -103,13 +103,14 @@ class Game extends Component {
         <Modal
           active={modalActive}
           title='Restart a game'
+          close={false}
         >
           <Button>
             Restart
           </Button>
-          <Button>
-            Quit
-          </Button>
+          <a className='button btn btn-dark' role="button" href="http://www.google.com">
+            Exit
+          </a>
         </Modal>
       </div>
     );

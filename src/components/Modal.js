@@ -52,13 +52,15 @@ class Modal extends Component {
         <div className='modal__wrapper'>
           <div className='modal__title-wrapper'>
             {this.props.title ? <h1 className='modal__title'>{this.props.title}</h1> : ''}
-            <img src={Close}
-                 className='modal__close'
-                 tabIndex='0'
-                 alt='Close Modal'
-                 onClick={this.handleClose}
-                 onKeyPress={(e) => this.handleKeyPress(e)}
-            />
+            {this.props.close ?
+              <img src={Close}
+                   className='modal__close'
+                   tabIndex='0'
+                   alt='Close Modal'
+                   onClick={this.handleClose}
+                   onKeyPress={(e) => this.handleKeyPress(e)}
+              /> : ''
+            }
           </div>
           <div className='modal__box'>
             <div className='modal__content'>
