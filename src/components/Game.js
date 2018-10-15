@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+
 import Board from './Board';
+import Modal from './Modal';
+import Button from './Button';
 
 
 function calculateWinner(squares) {
@@ -36,17 +39,29 @@ class Game extends Component {
       }
     ],
     stepNumber: 0,
-    xIsNext: true
+    xIsNext: true,
+    modalActive: false
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { history, stepNumber } = this.state;
+    const current = history[stepNumber];
+
+    const winner = calculateWinner(current.squares);
+
+    if(prevState.history !== history) {
+      if (winner) this.showModal();
+    }
   }
 
 
   handleClick(i) {
     const { history , stepNumber, xIsNext } = this.state;
 
+
     const historyCurrent = history.slice(0, stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
-
 
     if (calculateWinner(squares) || squares[i]) {
       return;
@@ -63,24 +78,17 @@ class Game extends Component {
       stepNumber: historyCurrent.length,
       xIsNext: !xIsNext
     });
+  }
 
+  showModal() {
+    this.setState({modalActive: true});
   }
 
   render() {
-    const { history, stepNumber } = this.state;
+    const { history, stepNumber, modalActive } = this.state;
     const { players } = this.props;
 
-    // Current square
     const current = history[stepNumber];
-
-    // Square's winning
-    const winner = calculateWinner(current.squares);
-
-
-    let status;
-    if (winner) {
-      status = "Winner: " + winner;
-    }
 
     return (
       <div className="game">
@@ -91,9 +99,18 @@ class Game extends Component {
             players={players}
           />
         </div>
-        <div className="game-info">
-          <div>{status}</div>
-        </div>
+
+        <Modal
+          active={modalActive}
+          title='Restart a game'
+        >
+          <Button>
+            Restart
+          </Button>
+          <Button>
+            Quit
+          </Button>
+        </Modal>
       </div>
     );
   }
