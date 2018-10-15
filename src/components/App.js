@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import axios from 'axios';
 
 import Box from './Box';
@@ -39,7 +39,7 @@ class App extends Component {
       <div className="dashboard">
         <div id="modal-root" />
         <div className="dashboard__logo-container">
-          <img className="dashboard__logo-image" src={Logo} alt="logo" />
+          <Link to="/"><img className="dashboard__logo-image" src={Logo} alt="logo" /></Link>
         </div>
         {
           !redirect &&
