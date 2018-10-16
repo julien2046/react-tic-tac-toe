@@ -34,52 +34,52 @@ html, body {
     background-color: #47d6b6; }
   .board.ligne-1:before {
     content: '';
-    width: 480px;
-    position: absolute;
-    top: 50%;
-    left: 15%; }
-  .board.ligne-2:before {
-    content: '';
-    width: 460px;
+    width: 90%;
     position: absolute;
     top: 15%;
-    left: 15%; }
-  .board.ligne-3:before {
+    left: 5%; }
+  .board.ligne-2:before {
     content: '';
-    width: 460px;
-    position: absolute;
-    top: 83%;
-    left: 15%; }
-  .board.ligne-4:before {
-    content: '';
-    width: 480px;
+    width: 90%;
     position: absolute;
     top: 50%;
-    left: -23%;
+    left: 5%; }
+  .board.ligne-3:before {
+    content: '';
+    width: 90%;
+    position: absolute;
+    top: 82.5%;
+    left: 5%; }
+  .board.ligne-4:before {
+    content: '';
+    width: 82.5%;
+    position: absolute;
+    top: 50%;
+    left: -25%;
     transform: rotate(90deg); }
   .board.ligne-5:before {
     content: '';
-    width: 480px;
+    width: 82.5%;
     position: absolute;
     top: 50%;
     left: 10%;
     transform: rotate(90deg); }
   .board.ligne-6:before {
     content: '';
-    width: 480px;
+    width: 82.5%;
     position: absolute;
     top: 50%;
-    left: 43%;
+    left: 42.5%;
     transform: rotate(90deg); }
   .board.ligne-7:before {
     content: '';
-    width: 624px;
+    width: 100%;
     position: absolute;
     top: 50%;
     transform: rotate(45deg); }
   .board.ligne-8:before {
     content: '';
-    width: 624px;
+    width: 100%;
     position: absolute;
     top: 50%;
     transform: rotate(-45deg); }
@@ -144,21 +144,22 @@ html, body {
     text-align: center;
     list-style: none; }
 
-.input__label {
-  display: inline-block;
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: white; }
-
-.input__field {
+.input {
   display: flex;
-  align-items: center;
-  width: 95%;
-  height: 55px;
-  padding: 0 15px;
-  margin-bottom: 15px;
-  background-color: white;
-  border: 1px solid grey; }
+  flex-direction: row;
+  margin-bottom: 10px; }
+  .input__label {
+    width: 20%;
+    line-height: 35px;
+    text-align: center;
+    font-weight: bold;
+    color: white; }
+  .input__field {
+    width: 70%;
+    height: 35px;
+    line-height: 35px;
+    background-color: white;
+    border: 1px solid grey; }
 
 .modal {
   position: fixed;

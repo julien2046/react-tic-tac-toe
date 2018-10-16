@@ -1,20 +1,22 @@
 .input {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
 
   &__label {
-    display: inline-block;
-    margin-bottom: 10px;
+    width: 20%;
+    line-height: 35px;
+    text-align: center;
 
     font-weight: bold;
     color: white;
   }
 
   &__field {
-    display: flex;
-    align-items: center;
-    width: 95%;
-    height: 55px;
-    padding: 0 15px;
-    margin-bottom: 15px;
+    width: 70%;
+    height: 35px;
+    line-height: 35px;
+
 
     background-color: white;
     border: 1px solid grey;
