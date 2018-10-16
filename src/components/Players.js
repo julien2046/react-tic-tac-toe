@@ -10,7 +10,7 @@ const Players = (props) => {
     <ul className={className}>
       {players.map((player, index) =>
         <li key={index}>
-          {player} : {score[index]}
+          <span className="players__label">Player {index + 1}</span> <span className="players__player">{player} {score[index]}</span>
         </li>
       )}
     </ul>

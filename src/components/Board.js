@@ -14,10 +14,12 @@ class Board extends Component {
       />
     );
   }
-
+  // players,
   render() {
-     const { players, score1, score2, playerOneActive, classNameLine } = this.props;
-     const className = `board ${classNameLine}`
+     const { score1, score2, playerOneActive, classNameLine } = this.props;
+     const className = `board ${classNameLine}`;
+     
+     const players = ['Julien', 'Marion'];
 
     return (
       <div>
