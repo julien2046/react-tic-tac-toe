@@ -175,7 +175,6 @@ class Game extends Component {
 
         <Modal
           active={modalActive}
-          title='Restart a game'
           close={false}
           className="modal--end-game"
         >

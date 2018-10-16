@@ -21,6 +21,15 @@
 
     img {
       display: inline-block;
+      margin: 0 15px;
+      width: auto;
+      height: 115px;
+
+      &:first-child {
+        height: 90px;
+        margin-top: 10px;
+
+      }
     }
   }
 
