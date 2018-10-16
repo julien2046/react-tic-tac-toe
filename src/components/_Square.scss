@@ -2,6 +2,8 @@
   $grey : #2c2c2c;
   $greyLight: #1e1e1e;
 
+
+
   float: left;
   width: 201px;
   height: 201px;
@@ -10,10 +12,12 @@
   background: $grey;
   border: 20px solid $greyLight;
 
+  font-family: 'Varela Round', sans-serif;
   font-size: 160px;
   text-align: center;
   font-weight: bold;
-  line-height: 160px;
+  line-height: 175px;
+  color: white;
 
   margin-right: -1px;
   margin-top: -1px;

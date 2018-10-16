@@ -1,7 +1,8 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%; }
+  height: 100%;
+  font-family: 'Roboto', sans-serif; }
 
 #root {
   height: 100%; }
@@ -94,6 +95,7 @@ html, body {
   overflow: hidden; }
 
 .button {
+  font-family: 'Roboto', sans-serif;
   display: inline-block;
   width: 200px;
   padding: 1.5rem .75rem;
@@ -101,9 +103,16 @@ html, body {
   font-size: 27px;
   font-weight: bold;
   user-select: none;
+  cursor: pointer;
   border: 1px solid transparent;
+  border-bottom: 3px solid #2bbf9e;
   border-radius: 25px;
   background: linear-gradient(#c4f2e8, #5cdbbe); }
+  .button:focus {
+    outline: none; }
+  .button:active {
+    background: #c4f2e8;
+    border-bottom: 3px solid transparent; }
   .button__container {
     display: flex; }
   .button__container--center {
@@ -115,6 +124,7 @@ html, body {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    padding: 1rem .75rem;
     margin-top: 15px; }
   .modal--end-game .button {
     position: relative;
@@ -207,7 +217,7 @@ html, body {
     overflow-x: hidden; }
     .modal--end-game .modal__content {
       display: flex;
-      justify-content: space-around; }
+      flex-direction: column; }
 
 .players {
   width: auto;
@@ -246,10 +256,12 @@ html, body {
   box-sizing: border-box;
   background: #2c2c2c;
   border: 20px solid #1e1e1e;
+  font-family: 'Varela Round', sans-serif;
   font-size: 160px;
   text-align: center;
   font-weight: bold;
-  line-height: 160px;
+  line-height: 175px;
+  color: white;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0; }
@@ -260,3 +272,19 @@ html, body {
   display: flex;
   flex-direction: row;
   justify-content: center; }
+  .game__winner {
+    width: 100%; }
+  .game__title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: white; }
+  .game__img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+    .game__img img {
+      display: inline-block; }
+  .game__buttons {
+    display: flex;
+    justify-content: space-around; }

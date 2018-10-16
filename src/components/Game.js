@@ -4,6 +4,10 @@ import Board from './Board';
 import Modal from './Modal';
 import Button from './Button';
 
+import xicon from '../assets/img/x-icon.svg';
+import oicon from '../assets/img/o-icon.svg';
+import victoryIcon from '../assets/img/victory-icon.svg';
+
 
 function findLines(lines) {
   let linesString = lines.join();
@@ -157,7 +161,7 @@ class Game extends Component {
 
     return (
       <div className="game">
-        <div className="game-board">
+        <div className="game__board">
           <Board
             squares={current.squares}
             onClick={i => this.handleClick(i)}
@@ -177,22 +181,26 @@ class Game extends Component {
         >
           {
             winner === "player-1" &&
-            <div className={`game__winner ${winner}`}>
-              <p>Victory to Player 1 !</p>
+            <div className='game__winner'>
+              <p className="game__title">Victory to Player 1 !</p>
+              <p className="game__img"><img src={xicon} alt="icon x" /><img alt="victory" src={victoryIcon} /></p>
             </div>
           }
           {
             winner === "player-2" &&
-            <div className={`game__winner ${winner}`}>
-              <p>Vicotory to Player 2 !</p>
+            <div className='game__winner'>
+              <p className="game__title">Vicotory to Player 2 !</p>
+              <p className="game__img"><img src={oicon} alt="icon o" /><img alt="victory" src={victoryIcon} /></p>
             </div>
           }
-          <Button handleClick={() => this.restartGame()}>
-            Restart
-          </Button>
-          <a className='button button--link' role="button" href="http://www.google.com">
-            Exit
-          </a>
+          <div className='game__buttons'>
+            <Button handleClick={() => this.restartGame()}>
+              Restart
+            </Button>
+            <a className='button button--link' role="button" href="http://www.google.com">
+              Exit
+            </a>
+          </div>
         </Modal>
       </div>
     );
