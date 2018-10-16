@@ -12,6 +12,7 @@ html, body {
 
 .dashboard {
   height: 100vh;
+  padding-bottom: 200px;
   background: linear-gradient(lighten(black, 15%), black);
 
   &__logo-container {

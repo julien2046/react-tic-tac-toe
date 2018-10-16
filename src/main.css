@@ -9,6 +9,7 @@ html, body {
 
 .dashboard {
   height: 100vh;
+  padding-bottom: 200px;
   background: linear-gradient(#262626, black); }
   .dashboard__logo-container {
     display: flex;
@@ -25,10 +26,13 @@ html, body {
 
 .board {
   position: relative;
-  width: 600px;
+  width: 635px;
   height: 600px;
   margin: 0 auto;
-  background-color: white; }
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+  .board__row:nth-child(1), .board__row:nth-child(2) {
+    border-bottom: 20px solid #1e1e1e; }
   .board:before {
     display: inline-block;
     height: 15px;
@@ -279,9 +283,9 @@ html, body {
   float: left;
   width: 201px;
   height: 201px;
-  box-sizing: border-box;
+  box-sizing: content-box;
+  border: 1px solid transparent;
   background: #2c2c2c;
-  border: 20px solid #1e1e1e;
   font-family: 'Varela Round', sans-serif;
   font-size: 160px;
   text-align: center;
@@ -291,6 +295,8 @@ html, body {
   margin-right: -1px;
   margin-top: -1px;
   padding: 0; }
+  .square:nth-child(1), .square:nth-child(2) {
+    border-right: 15px solid #1e1e1e; }
   .square:focus {
     outline: none; }
 

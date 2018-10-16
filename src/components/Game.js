@@ -126,7 +126,9 @@ class Game extends Component {
   }
 
   showModal() {
-    this.setState({modalActive: true});
+    setTimeout(() => {
+      this.setState({modalActive: true}); },
+    2000);
   }
 
   restartGame() {
@@ -146,11 +148,6 @@ class Game extends Component {
       winner: ''
     });
   }
-
-  setWinner() {
-    console.log(this.state.count % 2);
-  }
-
 
   render() {
     const { history, stepNumber, modalActive, score1, score2, playerOneActive, lines, winner } = this.state;
