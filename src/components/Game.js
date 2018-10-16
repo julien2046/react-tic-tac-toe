@@ -68,7 +68,7 @@ class Game extends Component {
     const current = history[history.length - 1];
     const squares = current.squares.slice();
 
-    let winner = count % 2 ? 'player 2' : 'player 1';
+    let winner = count % 2 ? 'player-2' : 'player-1';
 
     if (this.calculateWinner(squares) || squares[i]) {
       return;
@@ -176,12 +176,17 @@ class Game extends Component {
           className="modal--end-game"
         >
           {
-            winner &&
-            <div className={winner}>
-              <p>Vicotry to {winner} !</p>
+            winner === "player-1" &&
+            <div className={`game__winner ${winner}`}>
+              <p>Victory to Player 1 !</p>
             </div>
           }
-
+          {
+            winner === "player-2" &&
+            <div className={`game__winner ${winner}`}>
+              <p>Vicotory to Player 2 !</p>
+            </div>
+          }
           <Button handleClick={() => this.restartGame()}>
             Restart
           </Button>
