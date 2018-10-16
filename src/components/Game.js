@@ -78,7 +78,6 @@ class Game extends Component {
       return;
     }
 
-
     squares[i] = xIsNext ? "X" : "O";
 
     this.setState(state => ({
