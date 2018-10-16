@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://randomuser.me/api/?results=10')
+    axios.get('https://randomuser.me/api/?results=100')
       .then(res => {
         this.setState({credits: res.data.results})
     });
