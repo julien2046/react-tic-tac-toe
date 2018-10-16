@@ -5,6 +5,15 @@
   width: auto;
   margin: 50px auto;
 
+  .game-scene & {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 445px;
+    height: auto;
+  }
+
   &__container {
     padding: 1em;
   }

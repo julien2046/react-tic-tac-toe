@@ -32,11 +32,13 @@ class App extends Component {
 
     const currentPath = window.location.pathname;
     let redirect = false;
+    let className = '';
     if (currentPath === '/credits' || currentPath === '/game') redirect = true;
+    if (currentPath === '/game') className = 'game-scene';
 
-  
+
     return (
-      <div className="dashboard">
+      <div className={`dashboard ${className}`}>
         <div id="modal-root" />
         <div className="dashboard__logo-container">
           <Link to="/"><img className="dashboard__logo-image" src={Logo} alt="logo" /></Link>

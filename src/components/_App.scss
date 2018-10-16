@@ -20,11 +20,23 @@ html, body {
     justify-content: center;
     padding-top: 150px;
     margin-bottom: 100px;
+
+    .game-scene & {
+      display: inline-block;
+      width: 445px;
+      height: auto;
+      padding-top: 50px;
+    }
   }
 
   &__logo-image {
     display: inline-block;
     max-width: 780px;
     height: auto;
+
+    .game-scene & {
+      width: 100%;
+      height: auto;
+    }
   }
 }

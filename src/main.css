@@ -16,10 +16,18 @@ html, body {
     justify-content: center;
     padding-top: 150px;
     margin-bottom: 100px; }
+    .game-scene .dashboard__logo-container {
+      display: inline-block;
+      width: 445px;
+      height: auto;
+      padding-top: 50px; }
   .dashboard__logo-image {
     display: inline-block;
     max-width: 780px;
     height: auto; }
+    .game-scene .dashboard__logo-image {
+      width: 100%;
+      height: auto; }
 
 .app-form {
   position: relative; }
@@ -240,6 +248,13 @@ html, body {
 .players {
   width: auto;
   margin: 50px auto; }
+  .game-scene .players {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 445px;
+    height: auto; }
   .players__container {
     padding: 1em; }
   .players__list {
