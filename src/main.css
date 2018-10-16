@@ -12,8 +12,8 @@ html, body {
   position: relative;
   height: 100vh;
   max-width: 1080px;
-  margin: 0 auto;
-  padding-bottom: 200px; }
+  min-width: 900px;
+  margin: 0 auto; }
   .dashboard__logo-container {
     display: flex;
     justify-content: center;
@@ -207,7 +207,7 @@ html, body {
     width: 20%;
     line-height: 35px;
     text-align: center;
-    font-size: 22px;
+    font-size: 18px;
     color: white; }
     .input__label::first-letter {
       padding-right: 10px;
@@ -248,6 +248,7 @@ html, body {
     text-align: center; }
   .modal__title {
     width: 100%;
+    font-size: 28px;
     color: white;
     font-weight: bold; }
   .modal__close {
@@ -361,6 +362,8 @@ html, body {
   display: flex;
   flex-direction: row;
   justify-content: center; }
+  .game__board {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
   .game__winner {
     width: 100%; }
   .game__title {
@@ -371,7 +374,8 @@ html, body {
   .game__img {
     display: flex;
     flex-direction: row;
-    justify-content: center; }
+    justify-content: center;
+    margin: 30px 0; }
     .game__img img {
       display: inline-block;
       margin: 0 15px;

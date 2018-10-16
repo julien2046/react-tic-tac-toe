@@ -24,10 +24,6 @@
     border: 2px solid lighten($grey, 10%);
     border-radius: 10px;
     background-color: rgba($grey, 1);
-
-    .modal--end-game & {
-
-    }
   }
 
   &__title-wrapper {
@@ -37,6 +33,7 @@
 
   &__title {
     width: 100%;
+    font-size: 28px;
 
     color: white;
     font-weight: bold;
