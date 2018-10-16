@@ -16,15 +16,15 @@ class Board extends Component {
   }
   // players,
   render() {
-     const { score1, score2, playerOneActive, classNameLine } = this.props;
-     const className = `board ${classNameLine}`;
-     
-     const players = ['Julien', 'Marion'];
+     const { score1, score2, playerOneActive, classNameLine, players } = this.props;
+     const className = `board ${classNameLine ? classNameLine : ''}`;
+
+     const playersDefault = players ? players : ['Luke', 'Dark Vador'];
 
     return (
       <div>
         <div className='players'>
-          <Players players={players} score1={score1} score2={score2} playerOneActive={playerOneActive} />
+          <Players players={playersDefault} score1={score1} score2={score2} playerOneActive={playerOneActive} />
         </div>
         <div className={className}>
           <div className="board__row">

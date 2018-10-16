@@ -40,9 +40,9 @@ class App extends Component {
     return (
       <div className={`dashboard ${className}`}>
         <div id="modal-root" />
-        <div className="dashboard__logo-container">
+        <header className="dashboard__logo-container">
           <Link to="/"><img className="dashboard__logo-image" src={Logo} alt="logo" /></Link>
-        </div>
+        </header>
         {
           !redirect &&
           <Box>
