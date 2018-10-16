@@ -33,7 +33,8 @@ class Game extends Component {
     score1: 0,
     score2: 0,
     playerOneActive: true,
-    lines: []
+    lines: [],
+    count: 0
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -60,19 +61,22 @@ class Game extends Component {
 
 
   handleClick(i) {
-    const { history , stepNumber, xIsNext } = this.state;
+    const { history , stepNumber, xIsNext, count } = this.state;
 
     const historyCurrent = history.slice(0, stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
 
     if (this.calculateWinner(squares) || squares[i]) {
+      this.showModal();
       return;
     }
 
+    if(count === 8) this.showModal();
+
     squares[i] = xIsNext ? "X" : "O";
 
-    this.setState({
+    this.setState(state => ({
       history: historyCurrent.concat([
         {
           squares: squares
@@ -80,8 +84,9 @@ class Game extends Component {
       ]),
       stepNumber: historyCurrent.length,
       xIsNext: !xIsNext,
-      playerOneActive: !xIsNext
-    });
+      playerOneActive: !xIsNext,
+      count: state.count + 1
+    }));
   }
 
   calculateWinner(squares) {
