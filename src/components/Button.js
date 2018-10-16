@@ -5,7 +5,7 @@ const Button = (props) => {
 
 	return (
 		<button
-      className={`button btn-lg btn ${styleBtn ? styleBtn : '' }`}
+      className={`button ${styleBtn ? styleBtn : '' }`}
       onClick={handleClick}
       ref={refName}>
 			{props.children}

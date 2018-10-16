@@ -46,9 +46,10 @@ class Modal extends Component {
 
 
   modalContent = () => {
+    const { className } = this.props;
 
     return (
-      <div className='modal' onClick={(e) => this.handleClick(e)}>
+      <div className={`modal ${className ? className : ''}`} onClick={(e) => this.handleClick(e)}>
         <div className='modal__wrapper'>
           <div className='modal__title-wrapper'>
             {this.props.title ? <h1 className='modal__title'>{this.props.title}</h1> : ''}

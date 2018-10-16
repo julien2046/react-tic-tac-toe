@@ -2,14 +2,18 @@
   $blue-lagoon: #47d6b6;
   $blue-marine: #010102;
 
-  background: linear-gradient(lighten($blue-lagoon, 30%), lighten($blue-lagoon, 5%));
-  min-width: 200px;
-  min-height: 90px;
-  border-radius: 25px;
+  display: inline-block;
+  width: 200px;
+  padding: 1.5rem .75rem;
 
   color: $blue-marine;
   font-size: 27px;
   font-weight: bold;
+
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  background: linear-gradient(lighten($blue-lagoon, 30%), lighten($blue-lagoon, 5%));
 
   &__container {
     display: flex;
@@ -24,15 +28,22 @@
   }
 
   &--link {
-    line-height: 72px;
+    text-decoration: none;
+    text-align: center;
   }
 
   .modal__box & {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    min-height: 70px;
+
     margin-top: 15px;
+  }
+
+  .modal--end-game & {
+    position: relative;
+    left: 0;
+    transform: none;
   }
 
 }

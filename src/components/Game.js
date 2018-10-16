@@ -136,7 +136,6 @@ class Game extends Component {
 
     const current = history[stepNumber];
     const linesClassName = findLines(lines);
-    console.log(linesClassName);
 
     return (
       <div className="game">
@@ -156,11 +155,12 @@ class Game extends Component {
           active={modalActive}
           title='Restart a game'
           close={false}
+          className="modal--end-game"
         >
           <Button handleClick={() => this.restartGame()}>
             Restart
           </Button>
-          <a className='button btn btn-dark' role="button" href="http://www.google.com">
+          <a className='button button--link' role="button" href="http://www.google.com">
             Exit
           </a>
         </Modal>

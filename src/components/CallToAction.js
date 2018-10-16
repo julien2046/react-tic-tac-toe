@@ -50,7 +50,7 @@ class CallToAction extends Component {
               Credits
             </Button>
           </Link>
-          <a className='button btn btn-lg button--link' role="button" href="http://www.google.com">
+          <a className='button button--link' role="button" href="http://www.google.com">
             Exit
           </a>
         </div>

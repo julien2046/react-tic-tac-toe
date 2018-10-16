@@ -94,25 +94,32 @@ html, body {
   overflow: hidden; }
 
 .button {
-  background: linear-gradient(#c4f2e8, #5cdbbe);
-  min-width: 200px;
-  min-height: 90px;
-  border-radius: 25px;
+  display: inline-block;
+  width: 200px;
+  padding: 1.5rem .75rem;
   color: #010102;
   font-size: 27px;
-  font-weight: bold; }
+  font-weight: bold;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  background: linear-gradient(#c4f2e8, #5cdbbe); }
   .button__container {
     display: flex; }
   .button__container--center {
     justify-content: center; }
   .button--link {
-    line-height: 72px; }
+    text-decoration: none;
+    text-align: center; }
   .modal__box .button {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    min-height: 70px;
     margin-top: 15px; }
+  .modal--end-game .button {
+    position: relative;
+    left: 0;
+    transform: none; }
 
 .call-to-action {
   transform: translate3d(0, 0, 0);
@@ -177,17 +184,15 @@ html, body {
     overflow: auto;
     text-align: center; }
   .modal__title {
-    float: left;
-    width: 95%;
-    padding-left: 5%;
+    width: 100%;
     color: white;
     font-weight: bold; }
   .modal__close {
-    float: right;
     width: 24px;
     height: 24px;
-    position: relative;
-    top: 2px;
+    position: absolute;
+    top: 5%;
+    right: 2%;
     z-index: 10;
     cursor: pointer; }
   .modal__box {
@@ -199,6 +204,9 @@ html, body {
     overflow: hidden; }
   .modal__content {
     overflow-x: hidden; }
+    .modal--end-game .modal__content {
+      display: flex;
+      justify-content: space-around; }
 
 .players {
   width: 600px;
