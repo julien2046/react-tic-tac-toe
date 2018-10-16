@@ -17,11 +17,11 @@
 
   &__wrapper {
     position: relative;
-    max-width: 600px;
-    padding: 10px;
+    max-width: 560px;
+    padding: 20px;
 		overflow: hidden;
 
-    border: 1px solid white;
+    border: 2px solid lighten($grey, 10%);
     border-radius: 10px;
     background-color: rgba($grey, 1);
 
