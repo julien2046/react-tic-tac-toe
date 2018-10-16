@@ -34,7 +34,8 @@ class Game extends Component {
     score2: 0,
     playerOneActive: true,
     lines: [],
-    count: 0
+    count: 0,
+    winner: ''
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -67,12 +68,12 @@ class Game extends Component {
     const current = history[history.length - 1];
     const squares = current.squares.slice();
 
+    let winner = count % 2 ? 'player 2' : 'player 1';
+
     if (this.calculateWinner(squares) || squares[i]) {
-      this.showModal();
       return;
     }
 
-    if(count === 8) this.showModal();
 
     squares[i] = xIsNext ? "X" : "O";
 
@@ -85,8 +86,14 @@ class Game extends Component {
       stepNumber: historyCurrent.length,
       xIsNext: !xIsNext,
       playerOneActive: !xIsNext,
-      count: state.count + 1
+      count: state.count + 1,
+      winner: winner
     }));
+
+    if (count === 8) {
+      this.setState({winner: null});
+      this.showModal();
+    }
   }
 
   calculateWinner(squares) {
@@ -130,13 +137,19 @@ class Game extends Component {
       xIsNext: true,
       modalActive: false,
       playerOneActive: true,
-      lines: []
+      lines: [],
+      count: 0,
+      winner: ''
     });
+  }
+
+  setWinner() {
+    console.log(this.state.count % 2);
   }
 
 
   render() {
-    const { history, stepNumber, modalActive, score1, score2, playerOneActive, lines } = this.state;
+    const { history, stepNumber, modalActive, score1, score2, playerOneActive, lines, winner } = this.state;
     const { players } = this.props;
 
     const current = history[stepNumber];
@@ -162,6 +175,13 @@ class Game extends Component {
           close={false}
           className="modal--end-game"
         >
+          {
+            winner &&
+            <div className={winner}>
+              <p>Vicotry to {winner} !</p>
+            </div>
+          }
+
           <Button handleClick={() => this.restartGame()}>
             Restart
           </Button>
