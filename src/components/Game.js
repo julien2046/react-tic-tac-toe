@@ -174,6 +174,7 @@ class Game extends Component {
           active={modalActive}
           close={false}
           className="modal--end-game"
+          title={`${winner ? '' : 'No winner ...'}`}
         >
           {
             winner === "player-1" &&

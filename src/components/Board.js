@@ -14,7 +14,7 @@ class Board extends Component {
       />
     );
   }
-  // players,
+
   render() {
      const { score1, score2, playerOneActive, classNameLine, players } = this.props;
      const className = `board ${classNameLine ? classNameLine : ''}`;
